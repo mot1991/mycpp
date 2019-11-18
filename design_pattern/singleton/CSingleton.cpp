@@ -20,18 +20,18 @@ CSingleton::~CSingleton()
 
 CSingleton* CSingleton::getInstance()
 {
-	pthread_mutex_lock(&singleton_lock);
+    pthread_mutex_lock(&singleton_lock);
 
-	if(NULL == instance)
-	{
-		instance = new CSingleton();
-	}
+    if(NULL == instance)
+    {
+        instance = new CSingleton();
+    }
 
-	pthread_mutex_unlock(&singleton_lock);
-	return instance;
+    pthread_mutex_unlock(&singleton_lock);
+    return instance;
 }
 
 void CSingleton::doSomething()
 {
-	std::cout << "doSomething" << std::endl;
+    std::cout << "doSomething" << std::endl;
 }
